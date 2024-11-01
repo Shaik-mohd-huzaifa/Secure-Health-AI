@@ -1,0 +1,21 @@
+train_data = [
+    ("List out My appointments", "db"),  # Use LLM for general knowledge explanation
+    ("What doctor's are Available now", "db"),
+    ("I want to login", "Auth"),
+    ("Can i get to see my Profile", "Auth_Profile"),
+    ("Please sign me up", "Auth"),
+    ("I would like to Create a Account", "Auth"),
+    ("I would like to change my email", "Auth_Profile"),
+    ("Can you log me out?", "Auth_logout"),
+    ("Can i change the passcode", "Auth_Profile"),
+    ("I want to add another email to my account", "Auth_Profile"),
+    ("How many doctors does this hospital has", "RAG"),
+    ("When was this hospital established", "RAG"),
+    ("Patients Waiting for Orthopedic consultation", "db"),
+    ("Timing of Optician", "RAG"),
+    ("What are the Hospital Timings", "RAG"),
+    ("Show me my Profile", "RAG"),
+    ("What are diebeties?", "LLM"),
+    ("Why is CPR Done", "LLM"),
+    ("What is the Study of Heart called?", "LLM"),
+]
