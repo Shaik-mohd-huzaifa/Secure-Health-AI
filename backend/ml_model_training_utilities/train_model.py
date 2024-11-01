@@ -59,9 +59,7 @@ def train_initial_model():
     joblib.dump(vectorizer, "./trained_model/vectorizer.pkl")
 
 
-if __name__ == "__main__":
-    train_initial_model()
-
+# train_initial_model()
 
 def update_model(new_query, new_label):
     model_path = "./trained_model/model.pkl"

@@ -38,7 +38,7 @@ def data_from_rag(query):
 
 
 plain_prompt_template = """Answer the question based only on the following context:
-Question: {context} 
+Question: {Question} 
 """
 
 plain_prompt = ChatPromptTemplate.from_template(template=plain_prompt_template)
@@ -47,6 +47,6 @@ plain_prompt = ChatPromptTemplate.from_template(template=plain_prompt_template)
 def plain_llm(query):
     chain = plain_prompt | LLM | output_retreiver
 
-    response = chain.invoke(query)
+    response = chain.invoke({"Question": query})
 
     return response

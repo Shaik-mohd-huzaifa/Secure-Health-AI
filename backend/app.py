@@ -5,14 +5,11 @@ from services.tools import data_from_rag, plain_llm
 app = Flask(__name__)
 
 
-print(prediction("Can i change my account password"))
-
-
 @app.route("/ask", methods=["POST"])
 def ask():
-    data = request.get_data()
+    data = request.get_json()
     userQuery = data.get("prompt")
-    userdetails = data.get("details")
+    Auth = data.get("Auth")
 
     intent = prediction(userQuery)
 
@@ -25,7 +22,7 @@ def ask():
 
         return jsonify({"response": response, "intent": intent})
     elif intent == "db":
-        if userdetails:
+        if Auth:
             response = data_from_rag(userQuery)
             return jsonify({"response": response, "intent": intent})
         else:
